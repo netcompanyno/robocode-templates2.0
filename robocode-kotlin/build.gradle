@@ -1,0 +1,85 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "net.sf.robocode:robocode.api:1.9.2.1"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+ext.robocode = "/home/perthomas/robocode-1.9.3.2"
+
+ext.metadata = {
+    try {
+        sourceSets.main.kotlin.asFileTree.findAll { it.text =~ /: (Advanced)?Robot\(\)/ }.collect {
+            def pkg = (it.text =~ /package (.*)/)[0][1]
+            def name = (it.text =~ /class (.*) : (Advanced)?Robot\(\)/)[0][1]
+            return [pkg: pkg, name: name, clazz: "${pkg}.${name}"]
+        }
+        .first()
+    } catch (Exception e) {
+        println """
+            ERROR!
+            - Could not find a Robot with valid package and class definition.
+            - There should be a class extending Robot or AdvancedRobot with a valid package declaration.
+
+            package example
+
+            import robocode.Robot
+
+            class ExampleRobot : Robot() {
+                override fun run() {
+
+                }
+            }
+        """.stripIndent().trim()
+    }
+}()
+
+task generateProperties {
+    dependsOn processResources
+
+    doLast {
+        def propsFile = new File("${sourceSets.main.output.resourcesDir}/${"${metadata.pkg}.${metadata.name}".replace(".", "/")}.properties")
+        propsFile.parentFile.mkdirs()
+        propsFile.text = """
+            robot.author.name=${metadata.pkg}
+            robot.description=${metadata.name}
+            robot.classname=${metadata.clazz}
+            robocode.version=1.9.2.1
+        """.stripIndent().trim()
+    }
+}
+
+jar {
+    dependsOn generateProperties
+
+    baseName = metadata.clazz
+
+    manifest {
+        attributes "robots": metadata.clazz
+    }
+
+    from {
+        configurations.compile
+                .findAll { !it.path.contains("robocode.api") }
+                .collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+task export(type: Copy) {
+    def target = file(robocode + "/robots")
+    from jar
+    into target
+    doLast {
+        println("Exported robot to ${target}")
+    }
+}
