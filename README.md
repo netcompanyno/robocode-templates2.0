@@ -15,3 +15,17 @@
 1. Kjør `Tasks -> other -> export` fra Gradle-panelet i IntelliJ eller `gradlew export` fra terminalen.
 1. Stopp eventuell pågående kamp i robocode. Dette hindrer at du må kjøre `Options -> Clean robot cache`.
 1. Start ny eller restart siste kamp i robocode
+
+## Nyttige hurtigtaster
+
+### IntelliJ
+* `Shift-F6` Gi nytt navn
+* `Shift-F10` Bygg på nytt
+* `Ctrl-O` Overstyr funksjon
+* `Ctrl-Q` Vis dokumentasjon
+* `Ctrl-Alt-L` Formater koden
+
+### Robocode
+* `Ctrl-N` Ny kamp
+* `Alt-S` Stopp
+* `Alt-T` Restart
