@@ -15,7 +15,7 @@ compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-ext.robocode = "/home/perthomas/robocode-1.9.3.2"
+ext.robocode = "C:\\robocode"
 
 ext.metadata = {
     try {

@@ -5,7 +5,7 @@
 1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/latest/download) og [IntelliJ](https://www.jetbrains.com/idea/download/).
 1. Last ned [prosjektmalen som zip](https://github.com/netcompanyno/robocode-templates/archive/master.zip) eller kjør `git clone git@github.com:netcompanyno/robocode-templates`.
 1. Åpne enten Java- eller Kotlin-prosjektet i IntelliJ.
-1. Endre `ext.robocode` i `build.gradle` til din robocode-mappe. Typisk `C:\\Users\\<brukernavn>\\robocode`.
+1. Endre `ext.robocode` i `build.gradle` til din robocode-mappe. Typisk `C:\\robocode` eller `/home/<brukernavn>/robocode`.
 1. Endre pakkenavnet i `ExampleRobot` fra `example` til ditt lagnavn. Tips: Sett markøren i navnet eller merk mappen og trykk Shift-F6.
 1. Endre klassenavnet fra `ExampleRobot` til noe gøyalt, mystisk, eller fryktingytende. Trikset med Shift-F6 fungerer her også.
 
