@@ -29,3 +29,7 @@
 * `Ctrl-N` Ny kamp
 * `Alt-S` Stopp
 * `Alt-T` Restart
+
+## Nyttige lenker
+* [RoboWiki](http://robowiki.net/): [Tutorials](http://robowiki.net/wiki/Tutorials), [Game Physics](http://robowiki.net/wiki/Robocode/Game_Physics), [Graphical Debugging](http://robowiki.net/wiki/Robocode/Graphical_Debugging)
+* [Robocode API Javadoc](http://robocode.sourceforge.net/docs/robocode/): [Robot](http://robocode.sourceforge.net/docs/robocode/robocode/Robot.html), [AdvancedRobot](http://robocode.sourceforge.net/docs/robocode/robocode/AdvancedRobot.html)
