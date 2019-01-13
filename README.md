@@ -1,16 +1,26 @@
 # Robocode
 
-## Sett opp prosjektet
+## Sett opp prosjektet i IntelliJ (Anbefalt)
 
-1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/latest/download) og [IntelliJ](https://www.jetbrains.com/idea/download/).
+1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/latest/download).
+1. Installer [IntelliJ](https://www.jetbrains.com/idea/download/).
 1. Last ned og pakk ut [prosjektmalen](https://github.com/netcompanyno/robocode-templates/archive/master.zip).
 1. Åpne enten `robocode-java` eller `robocode-kotlin` i IntelliJ.
-1. Endre pakkenavnet i `ExampleRobot` fra `example` til ditt lagnavn. Tips: Sett markøren i navnet eller merk mappen og trykk Shift-F6.
-1. Endre klassenavnet fra `ExampleRobot` til noe gøyalt, mystisk, eller fryktingytende. Trikset med Shift-F6 fungerer her også.
+1. Endre pakkenavnet i `ExampleRobot` fra `example` til ditt lagnavn. Tips: Shift-F6.
+1. Endre klassenavnet fra `ExampleRobot` til noe gøyalt, mystisk, eller fryktingytende. Tips: Shift-F6.
+
+## Sett opp prosjektet i VS Code (Alternativt)
+
+1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/latest/download).
+1. Installer [VS Code](https://code.visualstudio.com/download) og utvidelsen `Language Support for Java(TM) by Red Hat`.
+1. Last ned og pakk ut [prosjektmalen](https://github.com/netcompanyno/robocode-templates/archive/master.zip).
+1. Åpne enten `robocode-java` eller `robocode-kotlin` i VS Code.
+1. Endre pakkenavnet i `ExampleRobot` fra `example` til ditt lagnavn. Navnet på mappen må endres til det samme.
+1. Endre klassenavnet fra `ExampleRobot` til noe gøyalt, mystisk, eller fryktingytende. Tips: F2.
 
 ## Bygg roboten
 
-1. Om du har endret klassenavn eller pakke, kjør `Tasks -> build -> clean` fra Gradle-panelet i IntelliJ eller `./gradlew clean` fra terminalen.
+1. Om du har endret klassenavn eller pakkenavn, kjør `Tasks -> build -> clean` fra Gradle-panelet i IntelliJ eller `./gradlew clean` fra terminalen.
 1. Kjør `Tasks -> other -> export` fra Gradle-panelet i IntelliJ eller `./gradlew export` fra terminalen.
 1. Stopp eventuell pågående kamp i robocode. Dette hindrer at du må kjøre `Options -> Clean robot cache`.
 1. Start ny eller restart siste kamp i robocode
@@ -23,6 +33,11 @@
 * `Ctrl-O` Overstyr funksjon
 * `Ctrl-Q` Vis dokumentasjon
 * `Ctrl-Alt-L` Formater koden
+
+### VS Code
+* `F2` Gi nytt navn
+* `Ctrl-S` Lagre
+* `Ctrl-Shift-I` Formater koden
 
 ### Robocode
 * `Ctrl-N` Ny kamp
