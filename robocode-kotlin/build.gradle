@@ -1,3 +1,5 @@
+import org.gradle.internal.os.OperatingSystem
+
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.60'
 }
@@ -15,7 +17,13 @@ compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-ext.robocode = "C:\\robocode"
+ext.robots = {
+    if (OperatingSystem.current().isWindows()) {
+       "C:/robocode/robots"
+    } else {
+       System.properties['user.home'] + "/robocode/robots"
+    }
+}()
 
 ext.metadata = {
     try {
@@ -76,10 +84,10 @@ jar {
 }
 
 task export(type: Copy) {
-    def target = file(robocode + "/robots")
     from jar
-    into target
+    into file(robots)
     doLast {
-        println("Exported robot to ${target}")
+        println("Exported ${robots}/${jar.baseName}.jar")
     }
 }
+
