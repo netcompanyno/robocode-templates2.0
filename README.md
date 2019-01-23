@@ -20,6 +20,7 @@
 
 ## Bygg roboten
 
+1. Om du har installert Robocode utenom standard filsti, oppdater `ext.robots` i `build.gradle`.
 1. Om du har endret klassenavn eller pakkenavn, kjør `Tasks -> build -> clean` fra Gradle-panelet i IntelliJ eller `./gradlew clean` fra terminalen.
 1. Kjør `Tasks -> other -> export` fra Gradle-panelet i IntelliJ eller `./gradlew export` fra terminalen.
 1. Stopp eventuell pågående kamp i robocode. Dette hindrer at du må kjøre `Options -> Clean robot cache`.
