@@ -2,7 +2,7 @@
 
 ## Sett opp prosjektet i IntelliJ (Anbefalt)
 
-1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/latest/download).
+1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/robocode/1.9.3.7/robocode-1.9.3.7-setup.jar/download).
 1. Installer [IntelliJ](https://www.jetbrains.com/idea/download/).
 1. Last ned og pakk ut [prosjektmalen](https://github.com/netcompanyno/robocode-templates/archive/master.zip).
 1. Åpne enten `robocode-java` eller `robocode-kotlin` i IntelliJ.
@@ -11,7 +11,7 @@
 
 ## Sett opp prosjektet i VS Code (Alternativt)
 
-1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/latest/download).
+1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/robocode/1.9.3.7/robocode-1.9.3.7-setup.jar/download).
 1. Installer [VS Code](https://code.visualstudio.com/download) og utvidelsen `Language Support for Java(TM) by Red Hat`.
 1. Last ned og pakk ut [prosjektmalen](https://github.com/netcompanyno/robocode-templates/archive/master.zip).
 1. Åpne enten `robocode-java` eller `robocode-kotlin` i VS Code.
