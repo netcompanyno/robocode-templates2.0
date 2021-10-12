@@ -1,7 +1,7 @@
 import org.gradle.internal.os.OperatingSystem
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
 }
 
 repositories {
@@ -79,7 +79,7 @@ jar {
     }
 
     from {
-        configurations.compileClasspath
+        configurations.compile
                 .findAll { !it.path.contains("robocode.api") }
                 .collect { it.isDirectory() ? it : zipTree(it) }
     }
