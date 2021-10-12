@@ -9,10 +9,9 @@ repositories {
 }
 
 dependencies {
-    compile "net.sf.robocode:robocode.api:1.9.2.1"
+    implementation "net.sf.robocode:robocode.api:1.9.4.3"
 }
 
-sourceCompatibility = 1.8
 
 ext.robots = {
     if (OperatingSystem.current().isWindows()) {
@@ -70,12 +69,14 @@ jar {
 
     baseName = metadata.clazz
 
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     manifest {
         attributes "robots": metadata.clazz
     }
 
     from {
-        configurations.compile
+        configurations.compileClasspath
                 .findAll { !it.path.contains("robocode.api") }
                 .collect { it.isDirectory() ? it : zipTree(it) }
     }
