@@ -1,7 +1,7 @@
 import org.gradle.internal.os.OperatingSystem
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
 }
 
 repositories {
@@ -9,8 +9,8 @@ repositories {
 }
 
 dependencies {
-    compile "net.sf.robocode:robocode.api:1.9.2.1"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "net.sf.robocode:robocode.api:1.9.2.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 compileKotlin {
@@ -72,12 +72,14 @@ jar {
 
     baseName = metadata.clazz
 
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     manifest {
         attributes "robots": metadata.clazz
     }
 
     from {
-        configurations.compile
+        configurations.compileClasspath
                 .findAll { !it.path.contains("robocode.api") }
                 .collect { it.isDirectory() ? it : zipTree(it) }
     }
