@@ -2,7 +2,7 @@
 
 ## Sett opp prosjektet i IntelliJ (Anbefalt)
 
-1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/robocode/1.9.3.7/robocode-1.9.3.7-setup.jar/download).
+1. Installer [Robocode](https://robocode.sourceforge.io/).
 1. Installer [IntelliJ](https://www.jetbrains.com/idea/download/).
 1. Last ned og pakk ut [prosjektmalen](https://github.com/netcompanyno/robocode-templates/archive/master.zip).
 1. Åpne enten `robocode-java` eller `robocode-kotlin` i IntelliJ.
@@ -11,7 +11,7 @@
 
 ## Sett opp prosjektet i VS Code (Alternativt)
 
-1. Installer [Robocode](https://sourceforge.net/projects/robocode/files/robocode/1.9.3.7/robocode-1.9.3.7-setup.jar/download).
+1. Installer [Robocode](https://robocode.sourceforge.io/).
 1. Installer [VS Code](https://code.visualstudio.com/download) og utvidelsen `Language Support for Java(TM) by Red Hat`.
 1. Last ned og pakk ut [prosjektmalen](https://github.com/netcompanyno/robocode-templates/archive/master.zip).
 1. Åpne enten `robocode-java` eller `robocode-kotlin` i VS Code.
@@ -25,6 +25,15 @@
 1. Kjør `Tasks -> other -> export` fra Gradle-panelet i IntelliJ eller `./gradlew export` fra terminalen.
 1. Stopp eventuell pågående kamp i robocode. Dette hindrer at du må kjøre `Options -> Clean robot cache`.
 1. Start ny eller restart siste kamp i robocode
+
+## INFO!! Hvis du kjører java 21
+
+Java security manager er deprecated i Java 21, eller nyere. Derfor må man inn i `~/robocode/robocode.sh`, og legg inn følgende flagg
+
+```
+-Djava.security.manager=allow \
+```
+under # Run robocode
 
 ## Nyttige hurtigtaster
 
