@@ -1,7 +1,7 @@
 import org.gradle.internal.os.OperatingSystem
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.23'
 }
 
 repositories {
